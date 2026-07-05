@@ -11,8 +11,15 @@
 [![Built with Tauri](https://img.shields.io/badge/built%20with-Tauri%202-24C8DB.svg)](https://tauri.app)
 [![Rust](https://img.shields.io/badge/Rust-1.77%2B-000000.svg?logo=rust)](https://www.rust-lang.org)
 [![whisper.cpp](https://img.shields.io/badge/STT-whisper.cpp-ff69b4.svg)](https://github.com/ggerganov/whisper.cpp)
+<br/>
+[![Latest release](https://img.shields.io/github/v/release/podheitor/BigTranscriber?sort=semver&label=release&color=success)](https://github.com/podheitor/BigTranscriber/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/podheitor/BigTranscriber/total?label=downloads&color=blue)](https://github.com/podheitor/BigTranscriber/releases)
 
 <img src="docs/screenshot.png" alt="BigTranscriber — live dual-channel transcript (OUTROS/EU) with input VU meters and auto-email" width="860">
+
+### ⬇️ [Download the latest release](https://github.com/podheitor/BigTranscriber/releases/latest)
+
+🐧 Ubuntu `.deb`  ·  🐧 BigLinux / any Linux `.AppImage`  ·  🪟 Windows `.exe`
 
 </div>
 
