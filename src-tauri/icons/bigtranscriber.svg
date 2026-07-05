@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f8ff7"/>
+      <stop offset="1" stop-color="#33c9a4"/>
+    </linearGradient>
+    <linearGradient id="mic" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e6efff"/>
+    </linearGradient>
+    <filter id="sh" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0b2b4a" flood-opacity="0.30"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="116" fill="url(#bg)"/>
+
+  <!-- sound waves emanating from the mic -->
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="15" opacity="0.65">
+    <path d="M190 172 a56 56 0 0 0 0 112"/>
+    <path d="M152 150 a82 82 0 0 0 0 156"/>
+    <path d="M322 172 a56 56 0 0 1 0 112"/>
+    <path d="M360 150 a82 82 0 0 1 0 156"/>
+  </g>
+
+  <!-- microphone -->
+  <g filter="url(#sh)">
+    <rect x="214" y="96" width="84" height="182" rx="42" fill="url(#mic)"/>
+    <path d="M180 222 v8 a76 76 0 0 0 152 0 v-8"
+          fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round"/>
+    <path d="M256 308 v52" stroke="#ffffff" stroke-width="18" stroke-linecap="round"/>
+    <path d="M214 378 h84" stroke="#ffffff" stroke-width="18" stroke-linecap="round"/>
+  </g>
+</svg>

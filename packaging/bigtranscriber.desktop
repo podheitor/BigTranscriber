@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=BigTranscriber
+GenericName=Live Transcription
+Comment=Live, offline transcription of system audio + microphone
+Comment[pt_BR]=Transcrição local e offline do áudio do sistema + microfone
+# WEBKIT_DISABLE_DMABUF_RENDERER avoids a blank window on some hybrid-GPU setups.
+Exec=env WEBKIT_DISABLE_DMABUF_RENDERER=1 bigtranscriber
+Icon=bigtranscriber
+Terminal=false
+Categories=AudioVideo;Audio;
+Keywords=transcription;transcrição;whisper;audio;microphone;microfone;
+StartupNotify=true
+StartupWMClass=BigTranscriber

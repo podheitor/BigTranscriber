@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BigTranscriber</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>BigTranscriber <span class="sub">— transcrição local de audiência</span></h1>
+    <div id="status" class="status idle">parado</div>
+  </header>
+
+  <section class="controls">
+    <div class="grid">
+      <label class="src">
+        <span class="src-head"><input id="sysOn" type="checkbox" checked /> Áudio do sistema (outros / Teams)</span>
+        <select id="sysSource"></select>
+      </label>
+      <label class="src">
+        <span class="src-head"><input id="micOn" type="checkbox" checked /> Microfone (você)</span>
+        <select id="micSource"></select>
+      </label>
+      <label>Modelo
+        <select id="model"></select>
+      </label>
+      <label>Idioma
+        <select id="language">
+          <option value="pt" selected>Português</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="auto">Auto</option>
+        </select>
+      </label>
+      <label title="Menor = transcrição aparece mais rápido (menos contexto). A GPU aguenta valores baixos.">Segmento (s) — menor = mais rápido
+        <input id="segment" type="number" min="2" max="30" value="4" />
+      </label>
+      <label>Rótulo sistema
+        <input id="sysLabel" type="text" value="OUTROS" />
+      </label>
+      <label>Rótulo microfone
+        <input id="micLabel" type="text" value="EU" />
+      </label>
+    </div>
+
+    <div class="meters">
+      <div class="meter off" id="meterSys">
+        <span class="lbl sys">OUTROS</span>
+        <div class="bar"><div class="cover"></div><div class="peak"></div></div>
+      </div>
+      <div class="meter off" id="meterMic">
+        <span class="lbl mic">EU</span>
+        <div class="bar"><div class="cover"></div><div class="peak"></div></div>
+      </div>
+    </div>
+
+    <fieldset class="email">
+      <legend>
+        <label class="chk"><input id="emailEnabled" type="checkbox" /> Enviar transcrição por e-mail automaticamente</label>
+      </legend>
+      <div class="grid email-grid">
+        <label>Para (e-mail)
+          <input id="emailTo" type="email" value="" placeholder="destino@exemplo.com" />
+        </label>
+        <label>A cada (minutos)
+          <input id="emailMinutes" type="number" min="0" max="1440" value="10" />
+        </label>
+        <label>Ou a cada (linhas)
+          <input id="emailLines" type="number" min="0" max="10000" value="0" />
+        </label>
+      </div>
+      <p class="hint">Envia via sua conta Gmail (API OAuth). <b>0 desativa</b> o gatilho.
+        Deixe minutos <i>ou</i> linhas (ou ambos). Use <b>Enviar agora</b> para mandar o que já foi transcrito.</p>
+      <button id="sendNow" type="button" disabled>✉ Enviar agora</button>
+      <span id="emailStatus" class="email-status"></span>
+    </fieldset>
+
+    <div class="actions">
+      <button id="start" class="primary">● Iniciar</button>
+      <button id="stop" class="danger" disabled>■ Parar</button>
+      <button id="clear">Limpar tela</button>
+      <span id="folder" class="folder"></span>
+    </div>
+    <p class="hint">Captura é <b>somente leitura</b>: não altera seu áudio nem o Bluetooth.
+       Use <b>fones de ouvido</b> para separar bem as vozes. O transcript é salvo
+       automaticamente em <code>transcript.txt</code> na pasta da sessão.</p>
+  </section>
+
+  <main id="transcript" class="transcript"></main>
+
+  <script src="main.js"></script>
+</body>
+</html>
