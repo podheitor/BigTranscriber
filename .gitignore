@@ -18,6 +18,11 @@
 # Node (only if a JS bundler is ever added)
 node_modules/
 
+# Local package artifacts (built with makepkg / tauri)
+*.pkg.tar.*
+*.AppImage
+*.deb
+
 # Editor / OS cruft
 *.swp
 *~

@@ -12,6 +12,8 @@
 [![Rust](https://img.shields.io/badge/Rust-1.77%2B-000000.svg?logo=rust)](https://www.rust-lang.org)
 [![whisper.cpp](https://img.shields.io/badge/STT-whisper.cpp-ff69b4.svg)](https://github.com/ggerganov/whisper.cpp)
 
+<img src="docs/screenshot.png" alt="BigTranscriber — live dual-channel transcript (OUTROS/EU) with input VU meters and auto-email" width="860">
+
 </div>
 
 ---
