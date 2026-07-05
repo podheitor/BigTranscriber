@@ -30,7 +30,7 @@ CPATH = "$SDK/include"
 BINDGEN_EXTRA_CLANG_ARGS = "-I$SDK/include"
 EOF
 
-# 3) Build.
+# 3) Build (GPU/Vulkan via the `gpu` cargo feature).
 echo ">> Building (release, Vulkan GPU) ..."
-( cd src-tauri && cargo build --release )
+( cd src-tauri && cargo build --release --features gpu )
 echo ">> Done: src-tauri/target/release/bigtranscriber"

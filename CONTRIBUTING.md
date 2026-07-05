@@ -20,12 +20,12 @@ packaging/            desktop entry used by the PKGBUILD
 ## Building
 
 - **GPU (Vulkan):** `./scripts/build.sh` (fetches a header-only Vulkan SDK the first
-  time), then `cd src-tauri && cargo build --release`.
-- **CPU-only:** `cargo build --release --no-default-features`.
+  time), then `cd src-tauri && cargo build --release --features gpu`.
+- **CPU-only (default):** `cargo build --release`.
 - Grab a model first: `./scripts/get-model.sh small` (or `large-v3`).
 
-The GPU backend is gated behind the default `gpu` Cargo feature
-(`gpu = ["whisper-rs/vulkan"]`), so CI and portable builds use `--no-default-features`.
+The GPU backend is gated behind the opt-in `gpu` Cargo feature
+(`gpu = ["whisper-rs/vulkan"]`); CI and portable release builds are plain CPU builds.
 
 ## Guidelines
 

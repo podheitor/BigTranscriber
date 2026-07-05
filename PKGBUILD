@@ -19,7 +19,7 @@ build() {
   # Use the system Vulkan headers/loader + glslc (makedepends above).
   export VULKAN_SDK=/usr
   export CPATH=/usr/include
-  cargo build --release --locked
+  cargo build --release --locked --features gpu
 }
 
 package() {

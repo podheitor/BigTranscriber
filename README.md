@@ -102,9 +102,10 @@ cd BigTranscriber
 ./scripts/build.sh                  # first build compiles whisper.cpp + shaders
 ```
 
-After the first `./scripts/build.sh`, plain `cargo build --release` and
-`cargo tauri dev` work too (paths are remembered in `src-tauri/.cargo/config.toml`).
-For a **CPU-only** build: `cargo build --release --no-default-features`.
+`scripts/build.sh` builds with `cargo build --release --features gpu`. After the
+first run the Vulkan paths are remembered in `src-tauri/.cargo/config.toml`, so
+`cargo build --release --features gpu` and `cargo tauri dev --features gpu` work
+directly. Omit `--features gpu` for a portable **CPU-only** build (the default).
 
 ## ▶️ Run
 
